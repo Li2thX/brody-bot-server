@@ -4,7 +4,7 @@ const app = express();
 
 const TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
-const bot = new TelegramBot(TOKEN);
+const bot = new TelegramBot(TOKEN, { polling: false });
 
 app.get('/get-invite', async (req, res) => {
   try {
