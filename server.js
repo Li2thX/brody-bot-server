@@ -5,6 +5,11 @@ const TelegramBot = require('node-telegram-bot-api');
 const app = express();
 app.use(cors());
 
+const corsOptions = {
+  origin: 'https://li2thx.github.io',
+  // за потреби додайте інші опції, наприклад optionsSuccessStatus: 200
+};
+
 const TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
 
