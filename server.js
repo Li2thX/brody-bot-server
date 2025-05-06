@@ -4,6 +4,7 @@ const app = express();
 
 const TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
+
 const bot = new TelegramBot(TOKEN, { polling: false });
 
 app.get('/get-invite', async (req, res) => {
@@ -17,6 +18,10 @@ app.get('/get-invite', async (req, res) => {
     console.error(e.message);
     res.status(500).json({ error: 'Помилка створення посилання' });
   }
+});
+
+app.get('/', (req, res) => {
+  res.send('Сервер працює. Для отримання посилання перейдіть на /get-invite');
 });
 
 const PORT = process.env.PORT || 3000;
