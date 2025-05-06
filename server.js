@@ -3,7 +3,7 @@ const cors = require('cors');
 const TelegramBot = require('node-telegram-bot-api');
 
 const app = express();
-const cors = require('cors');
+app.use(cors());
 
 const TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
